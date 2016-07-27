@@ -13,6 +13,10 @@ class MyApp < Sinatra::Base
     erb :board
   end
 
+  get '/board' do
+    erb :board
+  end
+
   post '/results' do
     print params[:data]
     @processed_data = Analysis.new(params[:data])
