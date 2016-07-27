@@ -41,7 +41,7 @@ h1 {
   background-color: #F5F5F5;
 }
 
-.table-hover>tbody>tr:hover>td {
+.hover-item:hover {
   background-color: rgba(15, 36, 61, 0.8);
   color: white;
   font-weight: bold;

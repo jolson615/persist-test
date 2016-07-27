@@ -1,11 +1,16 @@
 require 'bundler'
 Bundler.require
-require_relative 'models/model.rb'
+require_relative 'models/message.rb'
 
 class MyApp < Sinatra::Base
 
   get '/' do
     erb :index
+  end
+
+  post '/board' do
+    @new_message = Message.new(params[:name],params[:content])
+    erb :board
   end
 
   post '/results' do

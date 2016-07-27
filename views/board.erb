@@ -2,49 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Analyze Student Data</title>
+    <title>Results</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container">
       <div class="row buffer-md">
 
       </div>
-      <div class="row text-center">
-        <div class="text-center">
-          <h1>Input raw data in the box below</h1>
-        </div>
-      </div>
-      <div class="row buffer-sm">
-
-      </div>
       <div class="row">
-        <div class="">
-          <form action="/board" method="post">
-            <ul class="list-unstyled col-md-8 col-md-offset-2">
-              <li><label for="name">Your name:</label></li>
-              <li><input type="text" name="name"></li>
-              <li><label for="content">Your message:</label></li>
-              <li><input type="text" name="content"></li>
-              <!-- <li><label for="data">Input raw data here:</label></li>
-              <li><textarea name="data" rows="10" id="data-input"></textarea></li> -->
-              <li></li>
-              <li><input type="submit"></li>
-            </ul>
-          </form>
-        </div>
+        <h1 class="text-center">Message Board</h1>
       </div>
       <div class="row buffer-sm">
 
       </div>
+      <%Message.archive.each do |message|%>
+        <div class="row buffer-sm">
+          <div class="col-md-4">
+            <p>
+              <%=message.author%>
+            </p>
+          </div>
+          <div class="col-md-8">
+            <p>
+              <%=message.content%>
+            </p>
+          </div>
+        </div>
+      <%end%>
       <div class="row">
         <footer class="text-center" id="footer">
           Created by Jeff Olson for RePublic Schools, July 2016.
